@@ -1,0 +1,12 @@
+.grid {
+  background-color: #ccc;
+}
+[class^="grid__item"] {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px dotted #555;
+  border-radius: 10px;
+}

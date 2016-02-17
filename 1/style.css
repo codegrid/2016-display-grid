@@ -1,0 +1,75 @@
+/*
+ Layout
+ */
+/* landscape */
+.grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+.title {
+  grid-area: 1 / 1;
+}
+.status {
+  grid-area: 3 / 1;
+}
+.memberList {
+  grid-area: 2 / 1;
+  align-self: start;
+}
+.gameWindow {
+  grid-area: 1 / 2 / span 2 / auto;
+  height: 250px;
+}
+.chatWindow {
+  grid-area: 3 / 2;
+}
+/* portrait */
+@media (max-width: 450px) {
+  .grid {
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "title   list"
+                         "status  list"
+                         "game    game"
+                         "chat    chat";
+  }
+  .title {
+    grid-area: title;
+  }
+  .status {
+    grid-area: status;
+  }
+  .memberList {
+    grid-area: list;
+    align-self: stretch;
+  }
+  .gameWindow {
+    grid-area: game;
+  }
+  .chatWindow {
+    grid-area: chat;
+  }
+}
+/*
+ Theme
+ */
+.grid > div {
+  padding: 10px;
+  color: #fff;
+}
+.title {
+  background-color: gold;
+}
+.status {
+  background-color: limegreen;
+}
+.memberList {
+  background-color: tomato;
+}
+.gameWindow {
+  background-color: purple;
+}
+.chatWindow {
+  background-color: skyblue;
+}

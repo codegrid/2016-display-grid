@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../common.css" charset="utf-8">
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: ". a"
+                       "b a"
+                       ". a";
+  height: 300px;
+}
+.grid__item-1 { grid-area: a }
+.grid__item-2 {
+  grid-area: b;
+  align-self: start;
+}
+.grid__item-3 {
+  grid-area: b;
+  justify-self: end;
+  align-self: end
+}
+.grid__item-4 {
+  grid-column: b-start / a-end;
+  grid-row: b-start / b-end;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+</style>
+<title>align-self, justify-self</title>
+</head>
+<body>
+
+<div class="grid">
+  <div class="grid__item-1">item 1</div>
+  <div class="grid__item-2">item 2</div>
+  <div class="grid__item-3">item 3</div>
+  <div class="grid__item-4">item 4</div>
+</div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../common.css" charset="utf-8">
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: [first] 100px [second] 1fr [last]; /* 2列 */
+  grid-template-rows: [first] 100px [second] auto [third] auto [last]; /* 3行 */
+}
+.grid__item {
+  grid-column: second;
+  grid-row: third;
+}
+</style>
+<title>grid-gap</title>
+</head>
+<body>
+
+<div class="grid">
+  <div class="grid__item">item</div>
+</div>
+
+</body>
+</html>
+
