@@ -1,9 +1,9 @@
 2016-display-grid
 ==========
 
-# [これからのCSSグリッドレイアウト](https://app.codegrid.net/series/2016-display-grid)
+# [これからのグリッドレイアウト](https://app.codegrid.net/series/2016-display-grid)
 
-[CodeGrid](http://www.codegrid.net/)の「[これからのCSSグリッドレイアウト](https://app.codegrid.net/series/2016-display-grid)」の記事内で使用しているサンプルです。
+[CodeGrid](http://www.codegrid.net/)の「[これからのグリッドレイアウト](https://app.codegrid.net/series/2016-display-grid)」の記事内で使用しているサンプルです。
 
 各サンプルの解説については上記記事をご確認ください。
 
