@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* layout */
+.form {
+  display: grid;
+  grid-template-columns: [labels] 100px [values] auto [memos] 250px;
+  grid-auto-flow: row dense;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+.form__label {
+  grid-column: labels;
+  grid-row: auto;
+}
+.form__value {
+  grid-column: values;
+  grid-row: auto;
+}
+.form__memos {
+  grid-column: memos;
+  grid-row: 1 / span 4;
+}
+.form__buttons {
+  grid-row: auto;
+  grid-column: 1 / -1;
+}
+/* theme */
+.form {
+  font-size: 14px;
+}
+.form__label {
+  font-weight: bold;
+}
+[class*="form__"] {
+  border: 1px dotted #ccc;
+}
+input[class*="form__"] {
+  border-style: solid;
+  height: 30px;
+}
+.memo {
+
+}
+.memo__label {
+  display: block;
+  font-weight: bold;
+}
+.memo__value {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+}
+.buttons {
+  padding: 10px;
+  text-align: right;
+}
+.buttons__cancel {
+  background-color: #eeeeee;
+}
+.buttons__submit {
+  background-color: #93c47d;
+}
+</style>
+<title>sample-form-1</title>
+</head>
+<body>
+
+<form class="form">
+  <label class="form__label" for="name">Name</label>
+  <input class="form__value" type="text" id="name">
+  <span class="form__label">Sex</span>
+  <span class="form__value">
+    <input type="radio" name="sex" id="male"> <label for="male">Male</label>
+    <input type="radio" name="sex" id="female"> <label for="female">Female</label>
+  </span>
+  <label class="form__label" for="address">Address</label>
+  <input class="form__value" type="text" id="address">
+  <label class="form__label" for="mail">Mail</label>
+  <input class="form__value" type="text" id="mail">
+  <div class="form__memos  memo">
+    <label class="memo__label" for="memo">Memo</label>
+    <textarea class="memo__value" id="memo"></textarea>
+  </div>
+  <div class="form__buttons  buttons">
+    <button class="buttons__cancel">Cancel</button>
+    <button class="buttons__submit">Submit</button>
+  </div>
+</form>
+
+</body>
+</html>

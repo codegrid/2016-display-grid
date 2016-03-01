@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* layout */
+.itemList {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-column-gap: 15px;
+  grid-row-gap: 10px;
+  grid-auto-columns: 1fr;
+}
+.itemList__item--span-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+/* theme */
+.itemList__item {
+  border: 1px dotted #ccc;
+}
+.item {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.item__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #ccc;
+  text-align: center;
+}
+.item__text {
+  padding: 5px;
+  font-size: 12px;
+}
+</style>
+<title>sample-item-list-4</title>
+</head>
+<body>
+
+<div class="itemList">
+  <div class="itemList__item  itemList__item--span-2x2">
+    <div class="item">
+      <div class="item__image">1</div>
+      <div class="item__text">The quick brown fox jumps over the lazy dog. </div>
+    </div>
+  </div>
+  <div class="itemList__item">
+    <div class="item">
+      <div class="item__image">2</div>
+      <div class="item__text">The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. </div>
+    </div>
+  </div>
+  <div class="itemList__item">
+    <div class="item">
+      <div class="item__image">3</div>
+      <div class="item__text">The quick brown fox jumps over the lazy dog. </div>
+    </div>
+  </div>
+  <div class="itemList__item">
+    <div class="item">
+      <div class="item__image">4</div>
+      <div class="item__text">The quick brown fox jumps over the lazy dog. </div>
+    </div>
+  </div>
+  <div class="itemList__item">
+    <div class="item">
+      <div class="item__image">5</div>
+      <div class="item__text">The quick brown fox jumps over the lazy dog. </div>
+    </div>
+  </div>
+  <div class="itemList__item">
+    <div class="item">
+      <div class="item__image">6</div>
+      <div class="item__text">The quick brown fox jumps over the lazy dog. </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

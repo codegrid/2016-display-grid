@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* layout */
+.layout-3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px auto auto 100px;
+  grid-template-areas: "header   header   header"
+                       "column-1 column-2 column-3-1"
+                       "column-1 column-2 column-3-2"
+                       "footer   footer   footer";
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+.layout-3__header {
+  grid-area: header;
+}
+.layout-3__menu {
+  grid-area: column-1;
+}
+.layout-3__main {
+  grid-area: column-2;
+}
+.layout-3__form {
+  grid-area: column-3-1;
+}
+.layout-3__ad {
+  grid-area: column-3-2;
+}
+.layout-3__footer {
+  grid-area: footer;
+}
+
+/* 追記ここから */
+@media (max-width: 450px) {
+  .layout-3 {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto auto 100px;
+    grid-template-areas: "header"
+                         "column-2"
+                         "column-3-1"
+                         "column-3-2"
+                         "footer";
+  }
+  .layout-3__menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    grid-area: header;
+  }
+}
+/* 追記ここまで */
+
+/* theme */
+.layout-3__header {
+  background-color: #d5a6bd;
+}
+.layout-3__menu {
+  background-color: #a2c4c9;
+}
+.layout-3__main {
+  background-color: #9fc5f8;
+}
+.layout-3__form {
+  background-color: #f9cb9c;
+}
+.layout-3__ad {
+  background-color: #8e7cc3;
+}
+.layout-3__footer {
+  background-color: #b6d7a8;
+}
+@media (max-width: 450px) {
+  .layout-3__menu {
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)
+  }
+}
+</style>
+<title>sample-multi-column-1</title>
+</head>
+<body>
+
+<div class="layout-3">
+  <div class="layout-3__header">header</div>
+  <div class="layout-3__menu">menu</div>
+  <div class="layout-3__main">main</div>
+  <div class="layout-3__form">form</div>
+  <div class="layout-3__ad">
+    <ul>
+      <li>ad</li>
+      <li>ad</li>
+      <li>ad</li>
+      <li>ad</li>
+    </ul>
+  </div>
+  <div class="layout-3__footer">footer</div>
+</div>
+
+</body>
+</html>
+
+
