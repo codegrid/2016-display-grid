@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../common.css" charset="utf-8">
+<style>
+/* layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+#A {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  align-self: end;
+}
+#B {
+  z-index: 10;
+  grid-column: 1;
+  grid-row: 1;
+}
+#C {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin-left: -20px;
+}
+#D {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: start;
+}
+#E {
+  z-index: 5;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  justify-self: center;
+  align-self: center;
+}
+/* theme */
+.grid {
+  width: 300px;
+  height: 300px;
+}
+#A { background-color: rgba( 70, 130, 180, 0.6); }
+#B { background-color: rgba(138,  43, 226, 0.6); }
+#C { background-color: rgba(255, 165,   0, 0.6); }
+#D {
+  width: 120px;
+  height: 130px;
+  background-color: rgba(154, 205,  50, 0.6);
+}
+#E {
+  width: 150px;
+  height: 230px;
+  background-color: rgba(165,  42,  42, 0.6);
+}
+</style>
+<title>z-index</title>
+</head>
+<body>
+
+<div class="grid">
+  <div id="A" class="grid__item">A (auto)</div>
+  <div id="B" class="grid__item">B (10)</div>
+  <div id="C" class="grid__item">C (auto)</div>
+  <div id="D" class="grid__item">D (auto)</div>
+  <div id="E" class="grid__item">E (5)</div>
+</div>
+
+</body>
+</html>
