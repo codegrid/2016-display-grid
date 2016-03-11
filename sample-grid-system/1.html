@@ -14,6 +14,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 1fr;
+  word-break: break-all;
 }
 
 /* グリッドアイテム間の余白 */
@@ -72,7 +73,7 @@
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 .g-grid {
   counter-reset: grid;
@@ -121,35 +122,36 @@
   <div class="g-grid__item  g-grid__item--colspan-11">11</div>
   <div class="g-grid__item">1</div>
   <div class="g-grid__item  g-grid__item--colspan-12">12</div>
+  <div class="g-grid__item  g-grid__item--colspan-end">end</div>
 </div>
 
 <h2>列や行を結合する</h2>
 
 <div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid__item  g-grid__item--colspan-8  g-grid__item--rowspan-2">8</div>
-  <div class="g-grid__item  g-grid__item--colspan-4">4</div>
-  <div class="g-grid__item  g-grid__item--colspan-4  g-grid__item--rowspan-2">4</div>
-  <div class="g-grid__item  g-grid__item--colspan-3">3</div>
-  <div class="g-grid__item  g-grid__item--colspan-3  g-grid__item--rowspan-2">3</div>
-  <div class="g-grid__item  g-grid__item--colspan-2">2</div>
-  <div class="g-grid__item  g-grid__item--colspan-2  g-grid__item--rowspan-3">2</div>
-  <div class="g-grid__item  g-grid__item--colspan-1">1</div>
-  <div class="g-grid__item  g-grid__item--colspan-1">1</div>
-  <div class="g-grid__item  g-grid__item--colspan-2">2</div>
-  <div class="g-grid__item  g-grid__item--colspan-3">3</div>
-  <div class="g-grid__item  g-grid__item--colspan-10  g-grid__item--rowspan-2">1</div>
+  <div class="g-grid__item  g-grid__item--colspan-8  g-grid__item--rowspan-2">colspan-8, rowspan-2</div>
+  <div class="g-grid__item  g-grid__item--colspan-4">colspan-4</div>
+  <div class="g-grid__item  g-grid__item--colspan-4  g-grid__item--rowspan-2">colspan-4, rowspan-2</div>
+  <div class="g-grid__item  g-grid__item--colspan-3">colspan-3</div>
+  <div class="g-grid__item  g-grid__item--colspan-3  g-grid__item--rowspan-2">colspan-3, rowspan-2</div>
+  <div class="g-grid__item  g-grid__item--colspan-2">colspan-2</div>
+  <div class="g-grid__item  g-grid__item--colspan-2  g-grid__item--rowspan-3">colspan-2, rowspan-3</div>
+  <div class="g-grid__item  g-grid__item--colspan-1">colspan-1</div>
+  <div class="g-grid__item  g-grid__item--colspan-1">colspan-1</div>
+  <div class="g-grid__item  g-grid__item--colspan-2">colspan-2</div>
+  <div class="g-grid__item  g-grid__item--colspan-3">colspan-3</div>
+  <div class="g-grid__item  g-grid__item--colspan-10  g-grid__item--rowspan-2">colspan-10, rowspan-2</div>
 </div>
 
 <h2>列を指定する</h2>
 
 <div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid__item  g-grid__item--col-1  g-grid__item--colspan-8">col:1, col span: 8</div>
-  <div class="g-grid__item  g-grid__item--col-10  g-grid__item--colspan-3">col: 10, col span: 3</div>
-  <div class="g-grid__item  g-grid__item--col-1  g-grid__item--colspan-4">4</div>
-  <div class="g-grid__item  g-grid__item--col-9  g-grid__item--colspan-4">4</div>
-  <div class="g-grid__item  g-grid__item--col-5  g-grid__item--colspan-4">4</div>
-  <div class="g-grid__item  g-grid__item--col-4  g-grid__item--colspan-2">2</div>
-  <div class="g-grid__item  g-grid__item--col-3  g-grid__item--colspan-end">3</div>
+  <div class="g-grid__item  g-grid__item--col-1  g-grid__item--colspan-8">col-1, colspan-8</div>
+  <div class="g-grid__item  g-grid__item--col-10  g-grid__item--colspan-3">col-10, colspan-3</div>
+  <div class="g-grid__item  g-grid__item--col-1  g-grid__item--colspan-4">col-1, colspan-4</div>
+  <div class="g-grid__item  g-grid__item--col-9  g-grid__item--colspan-4">col-9, colspan-4</div>
+  <div class="g-grid__item  g-grid__item--col-5  g-grid__item--colspan-4">col-5, colspan-4</div>
+  <div class="g-grid__item  g-grid__item--col-4  g-grid__item--colspan-2">col-4, colspan-2</div>
+  <div class="g-grid__item  g-grid__item--col-3  g-grid__item--colspan-end">col-3, colspan-end</div>
 </div>
 
 <h2>途中で新しい行を作成する</h2>
