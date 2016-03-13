@@ -10,64 +10,58 @@
 
 /* グリッドコンテナ */
 .g-grid {
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 1fr;
-  word-break: break-all;
-}
-
-/* グリッドアイテム間の余白 */
-.g-grid--with-gutter {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  word-break: break-all; /* デモの都合で指定 */
 }
 
 /* 列の結合 */
-.g-grid__item--colspan-2 { grid-column-end: span 2; }
-.g-grid__item--colspan-3 { grid-column-end: span 3; }
-.g-grid__item--colspan-4 { grid-column-end: span 4; }
-.g-grid__item--colspan-5 { grid-column-end: span 5; }
-.g-grid__item--colspan-6 { grid-column-end: span 6; }
-.g-grid__item--colspan-7 { grid-column-end: span 7; }
-.g-grid__item--colspan-8 { grid-column-end: span 8; }
-.g-grid__item--colspan-9 { grid-column-end: span 9; }
-.g-grid__item--colspan-10 { grid-column-end: span 10; }
-.g-grid__item--colspan-11 { grid-column-end: span 11; }
-.g-grid__item--colspan-12 { grid-column-end: span 12; }
-.g-grid__item--colspan-end { grid-column-end: -1; }
+.g-item--colspan-2 { grid-column-end: span 2; }
+.g-item--colspan-3 { grid-column-end: span 3; }
+.g-item--colspan-4 { grid-column-end: span 4; }
+.g-item--colspan-5 { grid-column-end: span 5; }
+.g-item--colspan-6 { grid-column-end: span 6; }
+.g-item--colspan-7 { grid-column-end: span 7; }
+.g-item--colspan-8 { grid-column-end: span 8; }
+.g-item--colspan-9 { grid-column-end: span 9; }
+.g-item--colspan-10 { grid-column-end: span 10; }
+.g-item--colspan-11 { grid-column-end: span 11; }
+.g-item--colspan-12 { grid-column-end: span 12; }
 
 /* 行の結合 */
-.g-grid__item--rowspan-2 { grid-row-end: span 2; }
-.g-grid__item--rowspan-3 { grid-row-end: span 3; }
-.g-grid__item--rowspan-4 { grid-row-end: span 4; }
-.g-grid__item--rowspan-5 { grid-row-end: span 5; }
-.g-grid__item--rowspan-6 { grid-row-end: span 6; }
-.g-grid__item--rowspan-7 { grid-row-end: span 7; }
-.g-grid__item--rowspan-8 { grid-row-end: span 8; }
-.g-grid__item--rowspan-9 { grid-row-end: span 9; }
-.g-grid__item--rowspan-10 { grid-row-end: span 10; }
-.g-grid__item--rowspan-11 { grid-row-end: span 11; }
-.g-grid__item--rowspan-12 { grid-row-end: span 12; }
+.g-item--rowspan-2 { grid-row-end: span 2; }
+.g-item--rowspan-3 { grid-row-end: span 3; }
+.g-item--rowspan-4 { grid-row-end: span 4; }
+.g-item--rowspan-5 { grid-row-end: span 5; }
+.g-item--rowspan-6 { grid-row-end: span 6; }
+.g-item--rowspan-7 { grid-row-end: span 7; }
+.g-item--rowspan-8 { grid-row-end: span 8; }
+.g-item--rowspan-9 { grid-row-end: span 9; }
+.g-item--rowspan-10 { grid-row-end: span 10; }
+.g-item--rowspan-11 { grid-row-end: span 11; }
+.g-item--rowspan-12 { grid-row-end: span 12; }
 
 /* 列の指定 */
-.g-grid__item--col-1 { grid-column-start: 1; }
-.g-grid__item--col-2 { grid-column-start: 2; }
-.g-grid__item--col-3 { grid-column-start: 3; }
-.g-grid__item--col-4 { grid-column-start: 4; }
-.g-grid__item--col-5 { grid-column-start: 5; }
-.g-grid__item--col-6 { grid-column-start: 6; }
-.g-grid__item--col-7 { grid-column-start: 7; }
-.g-grid__item--col-8 { grid-column-start: 8; }
-.g-grid__item--col-9 { grid-column-start: 9; }
-.g-grid__item--col-10 { grid-column-start: 10; }
-.g-grid__item--col-11 { grid-column-start: 11; }
-.g-grid__item--col-12 { grid-column-start: 12; }
+.g-item--col-1 { grid-column-start: 1; }
+.g-item--col-2 { grid-column-start: 2; }
+.g-item--col-3 { grid-column-start: 3; }
+.g-item--col-4 { grid-column-start: 4; }
+.g-item--col-5 { grid-column-start: 5; }
+.g-item--col-6 { grid-column-start: 6; }
+.g-item--col-7 { grid-column-start: 7; }
+.g-item--col-8 { grid-column-start: 8; }
+.g-item--col-9 { grid-column-start: 9; }
+.g-item--col-10 { grid-column-start: 10; }
+.g-item--col-11 { grid-column-start: 11; }
+.g-item--col-12 { grid-column-start: 12; }
 
 /*
   theme
 */
-.g-grid__item {
+.g-item {
   position: relative;
   padding: 10px 0;
   background-color: rgba(0, 0, 0, 0.1);
@@ -78,7 +72,7 @@
 .g-grid {
   counter-reset: grid;
 }
-.g-grid__item:before {
+.g-item:before {
   counter-increment: grid;
   content: counter(grid);
   position: absolute;
@@ -94,12 +88,12 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.g-grid > .g-grid__item > .g-grid {
-  counter-reset: grid-in-grid__item;
+.g-grid > .g-item > .g-grid {
+  counter-reset: grid-in-item;
 }
-.g-grid > .g-grid__item > .g-grid > .g-grid__item:before {
-  counter-increment: grid-in-grid__item;
-  content: counter(grid) "." counter(grid-in-grid__item);
+.g-grid > .g-item > .g-grid > .g-item:before {
+  counter-increment: grid-in-item;
+  content: counter(grid) "." counter(grid-in-item);
 }
 </style>
 <title>like frame work</title>
@@ -108,80 +102,20 @@
 
 <h2>基本</h2>
 
-<div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid__item  g-grid__item--colspan-6">6</div>
-  <div class="g-grid__item  g-grid__item--colspan-6">6</div>
-  <div class="g-grid__item  g-grid__item--colspan-7">7</div>
-  <div class="g-grid__item  g-grid__item--colspan-5">5</div>
-  <div class="g-grid__item  g-grid__item--colspan-8">8</div>
-  <div class="g-grid__item  g-grid__item--colspan-4">4</div>
-  <div class="g-grid__item  g-grid__item--colspan-9">9</div>
-  <div class="g-grid__item  g-grid__item--colspan-3">3</div>
-  <div class="g-grid__item  g-grid__item--colspan-10">10</div>
-  <div class="g-grid__item  g-grid__item--colspan-2">2</div>
-  <div class="g-grid__item  g-grid__item--colspan-11">11</div>
-  <div class="g-grid__item">1</div>
-  <div class="g-grid__item  g-grid__item--colspan-12">12</div>
-  <div class="g-grid__item  g-grid__item--colspan-end">end</div>
-</div>
-
-<h2>列や行を結合する</h2>
-
-<div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid__item  g-grid__item--colspan-8  g-grid__item--rowspan-2">colspan-8, rowspan-2</div>
-  <div class="g-grid__item  g-grid__item--colspan-4">colspan-4</div>
-  <div class="g-grid__item  g-grid__item--colspan-4  g-grid__item--rowspan-2">colspan-4, rowspan-2</div>
-  <div class="g-grid__item  g-grid__item--colspan-3">colspan-3</div>
-  <div class="g-grid__item  g-grid__item--colspan-3  g-grid__item--rowspan-2">colspan-3, rowspan-2</div>
-  <div class="g-grid__item  g-grid__item--colspan-2">colspan-2</div>
-  <div class="g-grid__item  g-grid__item--colspan-2  g-grid__item--rowspan-3">colspan-2, rowspan-3</div>
-  <div class="g-grid__item  g-grid__item--colspan-1">colspan-1</div>
-  <div class="g-grid__item  g-grid__item--colspan-1">colspan-1</div>
-  <div class="g-grid__item  g-grid__item--colspan-2">colspan-2</div>
-  <div class="g-grid__item  g-grid__item--colspan-3">colspan-3</div>
-  <div class="g-grid__item  g-grid__item--colspan-10  g-grid__item--rowspan-2">colspan-10, rowspan-2</div>
-</div>
-
-<h2>列を指定する</h2>
-
-<div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid__item  g-grid__item--col-1  g-grid__item--colspan-8">col-1, colspan-8</div>
-  <div class="g-grid__item  g-grid__item--col-10  g-grid__item--colspan-3">col-10, colspan-3</div>
-  <div class="g-grid__item  g-grid__item--col-1  g-grid__item--colspan-4">col-1, colspan-4</div>
-  <div class="g-grid__item  g-grid__item--col-9  g-grid__item--colspan-4">col-9, colspan-4</div>
-  <div class="g-grid__item  g-grid__item--col-5  g-grid__item--colspan-4">col-5, colspan-4</div>
-  <div class="g-grid__item  g-grid__item--col-4  g-grid__item--colspan-2">col-4, colspan-2</div>
-  <div class="g-grid__item  g-grid__item--col-3  g-grid__item--colspan-end">col-3, colspan-end</div>
-</div>
-
-<h2>途中で新しい行を作成する</h2>
-
-<div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid__item">1</div>
-  <div class="g-grid__item">1</div>
-  <div class="g-grid__item">1</div>
-  <div class="g-grid__item">1</div>
-  <div class="g-grid  g-grid--with-gutter">
-    <div class="g-grid__item  g-grid__item--colspan-3">3</div>
-    <div class="g-grid__item  g-grid__item--colspan-7">7</div>
-  </div>
-  <div class="g-grid__item  g-grid__item--colspan-2">2</div>
-</div>
-
-<h2>入れ子</h2>
-
-<div class="g-grid  g-grid--with-gutter">
-  <div class="g-grid  g-grid--with-gutter">
-    <div class="g-grid__item">1</div>
-    <div class="g-grid__item  g-grid__item--colspan-11">
-      <div class="g-grid  g-grid--with-gutter">
-        <div class="g-grid__item  g-grid__item--colspan-6">6</div>
-        <div class="g-grid__item  g-grid__item--colspan-6">6</div>
-        <div class="g-grid__item  g-grid__item--colspan-8">8</div>
-        <div class="g-grid__item  g-grid__item--colspan-4">4</div>
-      </div>
-    </div>
-  </div>
+<div class="g-grid">
+  <div class="g-item  g-item--colspan-6">6</div>
+  <div class="g-item  g-item--colspan-6">6</div>
+  <div class="g-item  g-item--colspan-7">7</div>
+  <div class="g-item  g-item--colspan-5">5</div>
+  <div class="g-item  g-item--colspan-8">8</div>
+  <div class="g-item  g-item--colspan-4">4</div>
+  <div class="g-item  g-item--colspan-9">9</div>
+  <div class="g-item  g-item--colspan-3">3</div>
+  <div class="g-item  g-item--colspan-10">10</div>
+  <div class="g-item  g-item--colspan-2">2</div>
+  <div class="g-item  g-item--colspan-11">11</div>
+  <div class="g-item">1</div>
+  <div class="g-item  g-item--colspan-12">12</div>
 </div>
 
 </body>
